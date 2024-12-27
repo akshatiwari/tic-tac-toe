@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Retro Tic Tac Toe</title>
+    <style>
+      body {
+        background-color: #000;
+        color: #0f0;
+        font-family: "Courier New", monospace;
+        display: flex;
+        justify-content: space-around;
+        padding: 20px;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .game-container {
+        text-align: center;
+      }
+
+      .board {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        gap: 5px;
+        margin: 20px auto;
+        background: #0f0;
+        padding: 5px;
+        border: 2px solid #0f0;
+      }
+
+      .cell {
+        width: 100px;
+        height: 100px;
+        background: #000;
+        border: 2px solid #0f0;
+        color: #00ffff;
+        font-size: 40px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .cell:hover {
+        background: #030;
+      }
+
+      .scoreboard {
+        border: 2px solid #0f0;
+        padding: 20px;
+        margin-top: 20px;
+        text-align: left;
+      }
+
+      .game-history {
+        height: 200px;
+        overflow-y: auto;
+        margin-top: 20px;
+        border: 1px solid #0f0;
+        padding: 10px;
+      }
+
+      h1,
+      h2 {
+        text-shadow: 0 0 10px #0f0;
+      }
+
+      button {
+        background: #000;
+        color: #0f0;
+        border: 2px solid #0f0;
+        padding: 10px 20px;
+        font-family: "Courier New", monospace;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+
+      button:hover {
+        background: #030;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="game-container">
+      <h1>TIC TAC TOE</h1>
+      <div class="board" id="board">
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+        <div class="cell" data-cell></div>
+      </div>
+      <div id="status">PLAYER X'S TURN</div>
+      <button onclick="resetGame()">NEW GAME</button>
+    </div>
+
+    <div class="scoreboard">
+      <h2>SCOREBOARD</h2>
+      <div>PLAYER X: <span id="scoreX">0</span></div>
+      <div>PLAYER O: <span id="scoreO">0</span></div>
+      <h2>GAME HISTORY</h2>
+      <div class="game-history" id="gameHistory"></div>
+    </div>
+  </body>
+  <script src="game.js"></script>
+</html>
